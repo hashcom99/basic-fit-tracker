@@ -13,6 +13,7 @@ html{font-size:16px;-webkit-text-size-adjust:100%}
 :root{
   --or:#FF6100;--or-d:#E05500;--or-s:#FFF2EB;--or-m:#FFD0A8;
   --gr:#00C46A;--gr-s:#E5FBF2;
+  --bl:#3B82F6;--bl-s:#EFF6FF;
   --bg:#F5F4F0;--surf:#FFFFFF;
   --t1:#0E0E0E;--t2:#5E5E5E;--t3:#ADADAD;
   --bdr:rgba(0,0,0,0.07);
@@ -24,49 +25,24 @@ body{font-family:var(--fb);background:var(--bg);color:var(--t1);min-height:100vh
 button{font-family:var(--fb);cursor:pointer;border:none;background:none;outline:none;display:flex;align-items:center;justify-content:center}
 #app{max-width:430px;margin:0 auto;min-height:100svh;display:flex;flex-direction:column;padding-bottom:60px}
 
-/* HEADER */
-.hdr{
-  position:sticky;top:0;z-index:100;
-  background:rgba(245,244,240,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--bdr);padding:13px 20px;
-  display:flex;align-items:center;justify-content:space-between;
-}
+.hdr{position:sticky;top:0;z-index:100;background:rgba(245,244,240,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--bdr);padding:13px 20px;display:flex;align-items:center;justify-content:space-between}
 .logo-w{font-family:var(--fd);font-size:26px;letter-spacing:1px;line-height:1;color:var(--or)}
 .logo-w em{color:var(--t1);font-style:normal;opacity:.75}
 .logo-s{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-top:2px}
-.av{
-  width:36px;height:36px;border-radius:50%;
-  background:linear-gradient(140deg,var(--or),#FF9045);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 3px 10px rgba(255,97,0,0.3);
-}
+.av{width:36px;height:36px;border-radius:50%;background:linear-gradient(140deg,var(--or),#FF9045);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(255,97,0,0.3)}
 .av svg{width:18px;height:18px;stroke:white;fill:none;stroke-width:1.6;stroke-linecap:round}
 
-/* WEEK NAV */
 .wn{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px}
-.wn-btn{
-  width:38px;height:38px;border-radius:50%;
-  background:var(--surf);box-shadow:var(--sh);color:var(--t2);
-  transition:all .15s;flex-shrink:0;
-}
+.wn-btn{width:38px;height:38px;border-radius:50%;background:var(--surf);box-shadow:var(--sh);color:var(--t2);transition:all .15s;flex-shrink:0}
 .wn-btn:active{transform:scale(.88);box-shadow:none}
 .wn-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .wn-i{text-align:center}
 .wn-l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
 .wn-d{font-size:15px;font-weight:800;color:var(--t1);margin-top:3px}
 
-/* PROGRESS CARD */
-.pc{
-  margin:0 16px 16px;
-  background:linear-gradient(140deg,#FF6100 0%,#FF8840 100%);
-  border-radius:28px;padding:20px 22px;
-  display:flex;align-items:center;gap:18px;
-  box-shadow:var(--sho);position:relative;overflow:hidden;color:white;
-}
+.pc{margin:0 16px 16px;background:linear-gradient(140deg,#FF6100 0%,#FF8840 100%);border-radius:28px;padding:20px 22px;display:flex;align-items:center;gap:18px;box-shadow:var(--sho);position:relative;overflow:hidden;color:white}
 .pc::before{content:'';position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.07);top:-50px;right:-30px;pointer-events:none}
 .pc::after{content:'';position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.05);bottom:-40px;right:80px;pointer-events:none}
-
-/* Ring */
 .rw{position:relative;width:90px;height:90px;flex-shrink:0}
 .rs{width:100%;height:100%;transform:rotate(-90deg)}
 .rb{fill:none;stroke:rgba(255,255,255,.2);stroke-width:7}
@@ -74,8 +50,6 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none;outline:
 .rt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .rn{font-family:var(--fd);font-size:30px;line-height:1;letter-spacing:1px}
 .rd{font-size:10px;font-weight:700;opacity:.7;margin-top:-2px}
-
-/* Ring info */
 .pi{flex:1;position:relative;z-index:1;min-width:0}
 .ph{font-family:var(--fd);font-size:22px;line-height:1.05;letter-spacing:1px;margin-bottom:5px;white-space:pre-line}
 .ps{font-size:12px;font-weight:500;opacity:.8;margin-bottom:14px}
@@ -88,15 +62,9 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none;outline:
 .pd-d{background:white}
 .pw{margin-top:14px;background:rgba(255,255,255,.18);border-radius:12px;padding:8px 12px;font-size:12px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;width:100%}
 
-/* DAY STRIP */
 .days{display:flex;gap:7px;padding:0 16px 16px;overflow-x:auto;scrollbar-width:none}
 .days::-webkit-scrollbar{display:none}
-.dp{
-  flex:1;min-width:44px;display:flex;flex-direction:column;align-items:center;gap:5px;
-  padding:10px 5px 9px;border-radius:18px;border:1.5px solid var(--bdr);background:var(--surf);
-  cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);position:relative;
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
-}
+.dp{flex:1;min-width:44px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 5px 9px;border-radius:18px;border:1.5px solid var(--bdr);background:var(--surf);cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);position:relative;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .dp:active{transform:scale(.88)}
 .dp-l{font-size:10px;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:.02em}
 .dp-i{font-size:17px;line-height:1}
@@ -113,11 +81,9 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none;outline:
 .tp{position:absolute;top:6px;right:7px;width:5px;height:5px;border-radius:50%;background:var(--or)}
 .dp.act .tp{background:var(--or-d)}
 
-/* SESSION */
 .sess{padding:0 16px;animation:fu .3s cubic-bezier(.4,0,.2,1)}
 @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* REST */
 .rc{background:var(--surf);border-radius:28px;padding:52px 28px;text-align:center;box-shadow:var(--sh)}
 .ri{font-size:52px;margin-bottom:16px;display:block}
 .rda{font-family:var(--fd);font-size:40px;letter-spacing:2px;color:var(--t1);margin-bottom:4px}
@@ -125,7 +91,6 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none;outline:
 .rcs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .rch{background:var(--bg);border-radius:100px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--t2);display:flex;align-items:center;gap:6px}
 
-/* SESSION CARD */
 .sc{background:var(--surf);border-radius:28px;overflow:hidden;box-shadow:var(--sh)}
 .sc.dc{box-shadow:0 4px 20px rgba(0,196,106,.12);border:1px solid rgba(0,196,106,.15)}
 
@@ -139,64 +104,62 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none;outline:
 .sc-mt{display:flex;gap:7px;flex-wrap:wrap}
 .mp{background:var(--bg);border-radius:100px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--t2);display:flex;align-items:center;gap:5px}
 
-/* Section */
 .blk{padding:16px 20px;border-bottom:1px solid var(--bdr)}
 .blk-c{background:#FAFAF7;border-top:1px solid var(--bdr)}
+
+/* Cardio block */
+.blk-cardio{padding:14px 20px;border-bottom:1px solid var(--bdr);background:linear-gradient(135deg,#FFF8F5,#FFF2EB)}
+.cardio-row{display:flex;align-items:center;gap:14px}
+.cardio-ico{width:44px;height:44px;border-radius:14px;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 4px 12px rgba(255,97,0,.3)}
+.cardio-info{}
+.cardio-title{font-family:var(--fd);font-size:18px;letter-spacing:1px;color:var(--or);line-height:1}
+.cardio-detail{font-size:12px;font-weight:600;color:var(--t2);margin-top:3px}
+.cardio-check{margin-left:auto;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--or-m);background:white;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s cubic-bezier(.34,1.56,.64,1);flex-shrink:0;font-size:14px;font-weight:800;color:var(--t3)}
+.cardio-check:active{transform:scale(.85)}
+.cardio-check.done{background:var(--or);border-color:var(--or);color:white;animation:dp2 .3s cubic-bezier(.34,1.56,.64,1)}
+
 .sl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:12px;display:flex;align-items:center;gap:7px}
 .sli{width:22px;height:22px;border-radius:7px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:11px}
 
-/* Warmup */
 .wul{display:flex;flex-direction:column}
 .wi{display:flex;align-items:flex-start;gap:12px;padding:7px 0;border-bottom:1px solid var(--bdr)}
 .wi:last-child{border-bottom:none}
 .wn2{width:26px;height:26px;border-radius:50%;background:var(--or-s);border:1.5px solid var(--or-m);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--or);flex-shrink:0;margin-top:1px}
 .wt{font-size:13px;font-weight:500;color:#2A2A2A;line-height:1.5;padding-top:4px}
 
-/* Exercises */
 .exl{display:flex;flex-direction:column}
 .ex{padding:14px 0;border-bottom:1px solid var(--bdr)}
 .ex:last-child{border-bottom:none}
 .ex-t{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:9px}
 .ex-n{font-size:15px;font-weight:700;color:var(--t1);line-height:1.3;flex:1}
-.ex-nt{font-size:9px;font-weight:800;background:#EFF6FF;color:#3B82F6;padding:3px 8px;border-radius:7px;white-space:nowrap;margin-top:2px;flex-shrink:0}
-.ex-c{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.ex-nt{font-size:9px;font-weight:800;background:var(--bl-s);color:var(--bl);padding:3px 8px;border-radius:7px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.ex-c{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
 .chip{font-size:11px;font-weight:700;color:var(--t2);background:var(--bg);padding:5px 11px;border-radius:9px;display:flex;align-items:center;gap:5px}
 .chip svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round}
 .cr{color:var(--or);background:var(--or-s)}
+
+/* Replacement */
+.ex-rep{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--t3);margin-bottom:10px;background:var(--bg);padding:5px 10px;border-radius:8px;border-left:2px solid var(--or-m)}
+.ex-rep-lbl{color:var(--or);font-weight:700;white-space:nowrap}
+
 .sr{display:flex;align-items:center;gap:8px}
 .sl2{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--t3);width:28px;flex-shrink:0}
-
-/* Set dots */
-.sd{
-  width:42px;height:42px;border-radius:14px;border:1.5px solid rgba(0,0,0,.1);background:var(--bg);
-  font-size:14px;font-weight:800;color:var(--t3);cursor:pointer;
-  transition:all .25s cubic-bezier(.34,1.56,.64,1);
-  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
-}
+.sd{width:42px;height:42px;border-radius:14px;border:1.5px solid rgba(0,0,0,.1);background:var(--bg);font-size:14px;font-weight:800;color:var(--t3);cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .sd:active{transform:scale(.82)}
 .sd.dn{background:var(--or)!important;border-color:var(--or)!important;color:white!important;animation:dp2 .3s cubic-bezier(.34,1.56,.64,1)}
 @keyframes dp2{0%{transform:scale(.7)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
 .sd svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
-/* Cooldown */
 .ct{font-size:13px;color:var(--t2);line-height:1.7;font-weight:400}
 
-/* Cycling */
 .cyl{display:flex;flex-direction:column}
 .cyi{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--bdr)}
 .cyi:last-child{border-bottom:none}
 .cyic{width:40px;height:40px;border-radius:14px;background:var(--or-s);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .cyt{font-size:14px;font-weight:600;color:var(--t1);line-height:1.4}
 
-/* CTA */
 .ctaw{padding:16px 20px 20px;background:var(--surf)}
-.cta{
-  width:100%;padding:18px 24px;border-radius:18px;
-  font-family:var(--fd);font-size:24px;letter-spacing:2px;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--or);color:white;box-shadow:var(--sho);
-  transition:all .2s cubic-bezier(.4,0,.2,1);
-}
+.cta{width:100%;padding:18px 24px;border-radius:18px;font-family:var(--fd);font-size:24px;letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--or);color:white;box-shadow:var(--sho);transition:all .2s cubic-bezier(.4,0,.2,1)}
 .cta:active{transform:scale(.97);box-shadow:0 3px 10px rgba(255,97,0,.2)}
 .cta svg{width:22px;height:22px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cta.rdy{background:var(--gr);box-shadow:0 8px 28px rgba(0,196,106,.3);animation:gl 2s ease infinite}
@@ -215,57 +178,70 @@ const ACTIVE=[0,2,4,5,6];
 const C2=2*Math.PI*32;
 
 const P=[
-  {name:'Jambes',type:'training',dur:'55 min',
-   wu:['Tapis roulant 5 min — vitesse 5, plat','Leg swings 10× chaque jambe','Hip circles 10× chaque côté'],
+  // LUNDI — Jambes + Cardio
+  {name:'Jambes',type:'training',dur:'~65 min',
+   cardio:{dur:'15 min',detail:'Tapis — Vitesse 5 / Inclinaison 3'},
    ex:[
-    {n:'Leg Press',s:3,r:15,w:'70 kg',rest:'90s'},
-    {n:'Leg Extension',s:3,r:12,w:'35 kg',rest:'75s'},
-    {n:'Leg Curl',s:3,r:15,w:'35 kg',rest:'75s'},
-    {n:'Hip Abductor',s:3,r:15,w:'30 kg',rest:'60s'},
-    {n:'Seated Calf Raise',s:3,r:20,w:'40 kg',rest:'45s'}
+    {n:'Leg Press',s:3,r:15,w:'70 kg',rest:'90s',rep:'Squat haltères 2×15 kg'},
+    {n:'Leg Extension',s:3,r:12,w:'35 kg',rest:'75s',rep:'Fentes marchées'},
+    {n:'Leg Curl',s:3,r:15,w:'35 kg',rest:'75s',rep:'Fentes statiques'},
+    {n:'Hip Abductor',s:3,r:15,w:'30 kg',rest:'60s',rep:'Leg Press pieds écartés'},
+    {n:'Seated Calf Raise',s:3,r:20,w:'40 kg',rest:'45s',rep:'Mollets debout au mur'}
    ],
-   cd:'Le trajet vélo fait office de récupération active. Étirement optionnel : quadriceps + ischio-jambiers 30s à la sortie.'},
+   cd:'Le trajet vélo fait office de récupération active. Étirement optionnel : quadriceps + ischio-jambiers 30s.'},
+
+  // MARDI — Repos
   {name:'Repos',type:'rest'},
-  {name:'Poitrine · Épaules · Triceps',type:'training',dur:'55 min',
-   wu:["Circles d'épaules — 15 avant + 15 arrière","Arm crossovers dynamiques — 15 reps","1 série légère Chest Press à 50% — 15 reps"],
+
+  // MERCREDI — Poitrine + Cardio
+  {name:'Poitrine · Épaules · Triceps',type:'training',dur:'~65 min',
+   cardio:{dur:'15 min',detail:'Tapis — Vitesse 5 / Inclinaison 3'},
    ex:[
-    {n:'Chest Press',s:3,r:12,w:'40 kg',rest:'90s'},
-    {n:'Pec Deck',s:3,r:15,w:'35 kg',rest:'75s'},
-    {n:'Conv. Shoulder Press',s:3,r:12,w:'36 kg',rest:'75s'},
-    {n:'Lateral Raise Machine',s:3,r:15,w:'20 kg',rest:'60s',note:'Si dispo'},
-    {n:'Triceps Pushdown',s:3,r:15,w:'15 kg',rest:'60s'}
+    {n:'Chest Press',s:3,r:12,w:'40 kg',rest:'90s',rep:'Pompes ⭐'},
+    {n:'Pec Deck',s:3,r:15,w:'35 kg',rest:'75s',rep:'Chest Press 2ème passage'},
+    {n:'Conv. Shoulder Press',s:3,r:12,w:'36 kg',rest:'75s',rep:'Pompes ⭐'},
+    {n:'Lateral Raise Machine',s:3,r:15,w:'20 kg',rest:'60s',rep:'4ème série Conv. Shoulder Press'},
+    {n:'Triceps Pushdown',s:3,r:15,w:'15 kg',rest:'60s',rep:'Dips ⭐'}
    ],
    cd:"Trajet vélo. Étirement optionnel : épaules cross-body + triceps 30s."},
+
+  // JEUDI — Repos
   {name:'Repos',type:'rest'},
-  {name:'Dos · Biceps',type:'training',dur:'55 min',
-   wu:['Rotations de tronc debout — 15×','Band pull-aparts — 15 reps','1 série légère Lat Pulldown à 50% — 15 reps'],
+
+  // VENDREDI — Dos + Cardio
+  {name:'Dos · Biceps',type:'training',dur:'~65 min',
+   cardio:{dur:'15 min',detail:'Tapis — Vitesse 5 / Inclinaison 3'},
    ex:[
-    {n:'Lat Pulldown',s:3,r:12,w:'45 kg',rest:'90s'},
-    {n:'Seated Row',s:3,r:15,w:'40 kg',rest:'75s'},
-    {n:'Cable Row',s:3,r:15,w:'30 kg',rest:'75s'},
-    {n:'Face Pull',s:3,r:20,w:'15 kg',rest:'60s'},
-    {n:'Bicep Curl Machine',s:3,r:12,w:'25 kg',rest:'60s'}
+    {n:'Lat Pulldown',s:3,r:12,w:'45 kg',rest:'90s',rep:'Seated Row'},
+    {n:'Seated Row',s:3,r:15,w:'40 kg',rest:'75s',rep:'Cable Row'},
+    {n:'Cable Row',s:3,r:15,w:'30 kg',rest:'75s',rep:'Rowing haltère 1 bras 22 kg'},
+    {n:'Face Pull',s:3,r:20,w:'15 kg',rest:'60s',rep:'Seated Row léger'},
+    {n:'Bicep Curl Machine',s:3,r:12,w:'25 kg',rest:'60s',rep:'Curl haltères 2×12 kg'}
    ],
    cd:"Trajet vélo. Étirement optionnel : grand dorsal + biceps 30s."},
-  {name:'Vélo',type:'cycling',dur:'45 – 90 min',
+
+  // SAMEDI — Vélo
+  {name:'Vélo',type:'cycling',dur:'1h – 1h30',
    details:[
     {ic:'🎯',t:'Allure confortable, conversation possible'},
     {ic:'❤️',t:'Zone 2 — récupération active'},
     {ic:'💧',t:'Hydratation : 0,5 L par 30 min'}
    ]},
-  {name:'Full Body',type:'training',dur:'65 min',
-   wu:['Tapis roulant 20 min — Vitesse 5 / Inclinaison 3'],
+
+  // DIMANCHE — Full Body + Cardio
+  {name:'Full Body',type:'training',dur:'~75 min',
+   cardio:{dur:'20 min',detail:'Tapis — Vitesse 5 / Inclinaison 3'},
    ex:[
-    {n:'Conv. Shoulder Press',s:3,r:12,w:'36 kg',rest:'75s'},
-    {n:'Leg Press',s:3,r:15,w:'70 kg',rest:'75s'},
-    {n:'Cable Row',s:3,r:12,w:'30 kg',rest:'75s'},
-    {n:'Dips',s:3,r:12,w:'Poids corps',rest:'75s'},
-    {n:'Pompes',s:3,r:12,w:'Poids corps',rest:'60s'}
+    {n:'Conv. Shoulder Press',s:3,r:12,w:'36 kg',rest:'75s',rep:'Pompes ⭐'},
+    {n:'Leg Press',s:3,r:15,w:'70 kg',rest:'75s',rep:'Squat haltères 2×15 kg'},
+    {n:'Cable Row',s:3,r:12,w:'30 kg',rest:'75s',rep:'Rowing haltère 1 bras 22 kg'},
+    {n:'Dips ⭐',s:3,r:12,w:'Poids corps',rest:'75s',rep:'Pompes ⭐'},
+    {n:'Pompes ⭐',s:3,r:12,w:'Poids corps',rest:'60s',rep:'Dips ⭐'}
    ],
    cd:'Marche lente 2 min + étirements globaux 5 min (quadriceps, pec, grand dorsal).'}
 ];
 
-const ST={sel:ti(),wOff:0,done:{},sets:{}};
+const ST={sel:ti(),wOff:0,done:{},sets:{},cardio:{}};
 
 function ti(){const d=new Date().getDay();return d===0?6:d-1}
 function wk(o=0){
@@ -284,9 +260,15 @@ function wlbl(o=0){
 const gC=()=>ST.done[wk(ST.wOff)]||[];
 const iD=i=>gC().includes(i);
 const iSD=(d,e,s)=>!!ST.sets[`${d}_${e}_${s}`];
+const iCD=di=>!!ST.cardio[`${wk(ST.wOff)}_${di}`];
 function gP(){return{done:gC().filter(d=>P[d].type!=='rest').length,total:ACTIVE.length}}
 
 function tgSet(d,e,s){const k=`${d}_${e}_${s}`;ST.sets[k]?delete ST.sets[k]:(ST.sets[k]=true);render()}
+function tgCardio(di){
+  const k=`${wk(ST.wOff)}_${di}`;
+  ST.cardio[k]?delete ST.cardio[k]:(ST.cardio[k]=true);
+  render()
+}
 function tgDone(i){
   const k=wk(ST.wOff);if(!ST.done[k])ST.done[k]=[];
   const a=ST.done[k],x=a.indexOf(i);x===-1?a.push(i):a.splice(x,1);
@@ -294,10 +276,9 @@ function tgDone(i){
 }
 function chW(d){ST.wOff+=d;ST.sets={};render()}
 function selD(i){ST.sel=i;render()}
-function save(){try{localStorage.setItem('bf_v5',JSON.stringify(ST.done))}catch(e){}}
-function load(){try{const v=localStorage.getItem('bf_v5');if(v)ST.done=JSON.parse(v)}catch(e){}render()}
+function save(){try{localStorage.setItem('bf_v5',JSON.stringify({done:ST.done}))}catch(e){}}
+function load(){try{const v=localStorage.getItem('bf_v5');if(v){const p=JSON.parse(v);ST.done=p.done||{}}}catch(e){}render()}
 
-// SVG icon strings
 const IC={
   chevL:`<svg viewBox="0 0 18 18"><path d="M11 5L7 9l4 4"/></svg>`,
   chevR:`<svg viewBox="0 0 18 18"><path d="M7 5l4 4-4 4"/></svg>`,
@@ -381,9 +362,9 @@ function rSess(di,done){
       </div>
     </div>`;
 
-  const all=done||day.ex.every((ex,ei)=>{
+  const all=done||(day.ex&&day.ex.every((ex,ei)=>{
     for(let si=0;si<ex.s;si++)if(!iSD(di,ei,si))return false;return true;
-  });
+  }));
 
   let h=`<div class="sc${done?' dc':''}">`;
 
@@ -391,13 +372,11 @@ function rSess(di,done){
   h+=`<div class="sc-hdr">
     <div class="sc-hr">
       <div><div class="sc-day">${dn}</div><div class="sc-nm">${day.name.toUpperCase()}</div></div>
-      ${done
-        ?`<span class="bd">${IC.ck} Fait</span>`
-        :`<span class="bdd">⏱ ${day.dur}</span>`}
+      ${done?`<span class="bd">${IC.ck} Fait</span>`:`<span class="bdd">⏱ ${day.dur}</span>`}
     </div>
     <div class="sc-mt">
       ${day.ex?`<span class="mp">💪 ${day.ex.length} exercices</span>`:''}
-      ${day.type==='training'?'<span class="mp">🔥 Échauffement inclus</span>':''}
+      ${day.cardio?`<span class="mp">❤️ Cardio ${day.cardio.dur}</span>`:''}
       ${day.type==='cycling'?`<span class="mp">🚴 ${day.dur}</span>`:''}
     </div>
   </div>`;
@@ -409,10 +388,22 @@ function rSess(di,done){
     return h;
   }
 
-  // Warmup
-  h+=`<div class="blk"><div class="sl"><span class="sli">🔥</span>Échauffement</div><div class="wul">
-    ${day.wu.map((w,i)=>`<div class="wi"><div class="wn2">${i+1}</div><div class="wt">${w}</div></div>`).join('')}
-  </div></div>`;
+  // Cardio block
+  if(day.cardio){
+    const cdDone=done||iCD(di);
+    h+=`<div class="blk-cardio">
+      <div class="cardio-row">
+        <div class="cardio-ico">❤️</div>
+        <div class="cardio-info">
+          <div class="cardio-title">CARDIO · ${day.cardio.dur}</div>
+          <div class="cardio-detail">${day.cardio.detail}</div>
+        </div>
+        ${!done?`<button class="cardio-check${cdDone?' done':''}" onclick="tgCardio(${di})">
+          ${cdDone?IC.ck2:''}
+        </button>`:`<span class="cardio-check done">${IC.ck2}</span>`}
+      </div>
+    </div>`;
+  }
 
   // Exercises
   h+=`<div class="blk"><div class="sl"><span class="sli">💪</span>Exercices</div><div class="exl">
@@ -421,9 +412,7 @@ function rSess(di,done){
         const sd=done||iSD(di,ei,si);
         return done
           ?`<span class="sd dn">${IC.ck2}</span>`
-          :`<button class="sd${sd?' dn':''}" onclick="tgSet(${di},${ei},${si})">
-              ${sd?IC.ck2:si+1}
-            </button>`;
+          :`<button class="sd${sd?' dn':''}" onclick="tgSet(${di},${ei},${si})">${sd?IC.ck2:si+1}</button>`;
       }).join('');
       return`<div class="ex">
         <div class="ex-t"><div class="ex-n">${ex.n}</div>${ex.note?`<span class="ex-nt">${ex.note}</span>`:''}</div>
@@ -432,6 +421,7 @@ function rSess(di,done){
           <span class="chip">${IC.wgt}${ex.w}</span>
           <span class="chip cr">${IC.clk}${ex.rest}</span>
         </div>
+        ${ex.rep?`<div class="ex-rep"><span class="ex-rep-lbl">🔄 Si indispo :</span>${ex.rep}</div>`:''}
         <div class="sr"><span class="sl2">Sets</span>${dots}</div>
       </div>`;
     }).join('')}
